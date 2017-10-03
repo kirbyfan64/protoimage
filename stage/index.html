@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>protoimage</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-session"></script>
+
+  <script src="https://unpkg.com/vue-material"></script>
+  <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+
+  <script defer="" src="index.initialize.dart.js"></script>
+  
+
+  <style>
+    #main { padding: 0 0.83em; }
+    [v-cloak] { display: none; }
+  </style>
+</head>
+
+
+<body vuedart="">
+  <div id="app">
+    <site-navbar></site-navbar>
+
+    <div id="main" v-cloak="">
+      <if-logged-in>
+        <div slot="then">
+          <h2>welcome! here are your albums:</h2>
+
+          <album-list></album-list>
+        </div>
+
+        <div slot="else">
+          <h2>protoimage lets you upload photos that can't be downloaded.</h2>
+
+          <ul>
+            <li>All your albums are password-protected.</li>
+            <li>Multiple passwords make it easy to revoke individual access.</li>
+            <li>Files are securely stored in Google Drive.</li>
+            <li><b>Entirely client-side!</b></li>
+          </ul>
+
+          <p>Get started by logging in to your Google account above!</p>
+        </div>
+      </if-logged-in>
+    </div>
+  </div>
+
+</body></html>
